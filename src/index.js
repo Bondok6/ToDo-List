@@ -1,8 +1,8 @@
-import "./style.css";
-import optionIconUrl from "./imgs/optionsIcon.svg";
-import tasks from "./modules/tasksList.js";
+import './style.css';
+import optionIconUrl from './imgs/optionsIcon.svg';
+import tasks from './modules/tasksList.js';
 
-const inputItem = document.getElementById("input-item");
+const inputItem = document.getElementById('input-item');
 
 const tasksDisplay = () => {
   tasks.reverse().forEach((task) => {
@@ -14,7 +14,7 @@ const tasksDisplay = () => {
       <img src="${optionIconUrl}" alt="option-icon" class="option-icon">
     </li>
     `;
-    inputItem.insertAdjacentHTML("afterend", html);
+    inputItem.insertAdjacentHTML('afterend', html);
   });
 };
 
