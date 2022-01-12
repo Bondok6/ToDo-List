@@ -1,11 +1,10 @@
-import _ from "lodash";
 import "./style.css";
 import OptionIconUrl from "./imgs/optionsIcon.svg";
 
-const tasksDisplay = () => {
-  const inputItem = document.getElementById("input-item");
-  const tasks = ["Study Arabic", "Study English", "Study JavaScript"];
+const inputItem = document.getElementById("input-item");
+const tasks = ["Study Arabic", "Study English", "Study JavaScript"];
 
+const tasksDisplay = () => {
   tasks.forEach((task, ind) => {
     let html = `
     <li class="task-${ind + 1}">
