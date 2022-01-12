@@ -1,22 +1,17 @@
 import "./style.css";
-import OptionIconUrl from "./imgs/optionsIcon.svg";
+import optionIconUrl from "./imgs/optionsIcon.svg";
+import tasks from "./modules/tasksList.js";
 
 const inputItem = document.getElementById("input-item");
-const tasks = [
-  "Study Arabic",
-  "Study English",
-  "Study JavaScript",
-  "Study Math",
-];
 
 const tasksDisplay = () => {
-  tasks.reverse().forEach((task, ind) => {
+  tasks.reverse().forEach((task) => {
     const html = `
-    <li class="task-${ind + 1}">
+    <li class="task-${task.index}">
       <div class="task">
-        <input type="checkbox" name="task"> ${task}
+        <input type="checkbox" name="task"> ${task.description}
       </div>
-      <img src="${OptionIconUrl}" alt="option-icon" class="option-icon">
+      <img src="${optionIconUrl}" alt="option-icon" class="option-icon">
     </li>
     `;
     inputItem.insertAdjacentHTML("afterend", html);
