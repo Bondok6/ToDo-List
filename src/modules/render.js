@@ -3,7 +3,7 @@ import trashIcon from "../imgs/trashIcon.svg";
 import Tasks from "./classTasks";
 import getData from "./arrangeIndex";
 
-const displayAllTasks = () => {
+const render = () => {
   getData();
 
   let htmlTask = "";
@@ -22,8 +22,6 @@ const displayAllTasks = () => {
   });
   const ul = document.getElementById("ul");
   ul.innerHTML = htmlTask;
-  // const inputItem = document.getElementById("input-item");
-  // inputItem.insertAdjacentHTML("afterend", htmlTask);
 };
 
-export default displayAllTasks;
+export default render;

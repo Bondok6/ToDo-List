@@ -25,14 +25,14 @@ body {
   font-size: 2rem;
 }
 
-#todo-list li:not(:nth-of-type(2), :last-of-type) {
+#todo-list .list-item {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
   flex-wrap: wrap;
 }
 
-#todo-list li:not(:nth-last-of-type(2))::after {
+#todo-list li:not(:last-of-type)::after {
   content: "";
   flex-basis: 100%;
   border-bottom: 2px solid #5c5959;
@@ -108,4 +108,15 @@ span {
   letter-spacing: 1.5px;
   padding: 0.2rem 0.5rem;
   width: 90%;
+}
+
+#ul {
+  list-style: none;
+}
+
+#ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  flex-wrap: wrap;
 }
