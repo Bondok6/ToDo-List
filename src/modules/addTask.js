@@ -1,10 +1,15 @@
 import Tasks from "./classTasks.js";
 import checkDuplicate from "./checkDup.js";
 import optionIconUrl from "../imgs/optionsIcon.svg";
+import trashIcon from "../imgs/trashIcon.svg";
+import getData from "./arrangeIndex.js";
 
 const input = document.getElementById("task-input");
 const inputItem = document.getElementById("input-item");
 
+getData();
+let id;
+id = Tasks.tasks.length;
 const addTask = (e) => {
   if (e.key === "Enter") {
     // If empty value
@@ -15,21 +20,25 @@ const addTask = (e) => {
     if (!checkDuplicate(input.value)) return;
 
     // If It's a new task
-    const newTask = new Tasks(input.value, Tasks.tasks.length);
+    const newTask = new Tasks(input.value, id);
     console.log(newTask);
     Tasks.tasks.push(newTask);
     Tasks.storage(Tasks.tasks);
 
     let htmlTask = `
-    <li class="task-${newTask.id}">
+    <li class="${newTask.index}">
       <div class="task">
-        <input type="checkbox" name="task"> ${newTask.description}
+        <input type="checkbox" name="task" class="checkbox"><input type="text" readonly class="task-desc" value="${newTask.description}"/>
       </div>
+      <div>
       <img src="${optionIconUrl}" alt="option-icon" class="option-icon">
+      <img src="${trashIcon}" alt="option-icon" class="delete-icon">
+      </div>
     </li>
     `;
 
     inputItem.insertAdjacentHTML("afterend", htmlTask);
+    id += 1;
 
     // Clear inputs
     input.value = "";

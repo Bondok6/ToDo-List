@@ -50,6 +50,7 @@ body {
 }
 
 .option-icon,
+.delete-icon,
 .rotate-icon {
   cursor: pointer;
 }
@@ -86,4 +87,25 @@ body {
 .success {
   color: #4f8a10;
   background-color: #dff2bf;
+}
+
+.finished {
+  text-decoration: line-through;
+}
+
+span {
+  cursor: pointer;
+}
+
+.task {
+  width: 70%;
+}
+
+.task-desc {
+  border: none;
+  outline: none;
+  font-size: 1.8rem;
+  letter-spacing: 1.5px;
+  padding: 0.2rem 0.5rem;
+  width: 90%;
 }
