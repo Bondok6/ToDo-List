@@ -1,12 +1,11 @@
-import "./style.css";
+import './style.css';
 
-import displayAllTasks from "./modules/displayAllTasks.js";
-import addTask from "./modules/addTask.js";
-import options from "./modules/allOptions.js";
-import Tasks from "./modules/classTasks.js";
+import displayAllTasks from './modules/displayAllTasks.js';
+import addTask from './modules/addTask.js';
+import options from './modules/allOptions.js';
 
-document.addEventListener("keypress", addTask);
-document.addEventListener("click", options);
+document.addEventListener('keypress', addTask);
+document.addEventListener('click', options);
 
 window.onload = () => {
   displayAllTasks();

@@ -1,12 +1,12 @@
-import optionIconUrl from "../imgs/optionsIcon.svg";
-import trashIcon from "../imgs/trashIcon.svg";
-import getData from "./arrangeIndex";
-import Tasks from "./classTasks";
+import optionIconUrl from '../imgs/optionsIcon.svg';
+import trashIcon from '../imgs/trashIcon.svg';
+import getData from './arrangeIndex.js';
+import Tasks from './classTasks.js';
 
 const displayAllTasks = () => {
   getData();
 
-  let htmlTask = "";
+  let htmlTask = '';
   Tasks.tasks.forEach((task) => {
     htmlTask = `
     <li class="${task.index}">
@@ -19,8 +19,8 @@ const displayAllTasks = () => {
       </div>
     </li>
     `;
-    const inputItem = document.getElementById("input-item");
-    inputItem.insertAdjacentHTML("afterend", htmlTask);
+    const inputItem = document.getElementById('input-item');
+    inputItem.insertAdjacentHTML('afterend', htmlTask);
   });
 };
 
