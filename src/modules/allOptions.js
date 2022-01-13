@@ -39,7 +39,7 @@ const options = (e) => {
 
   // completed Task
   if (e.target.classList.contains("checkbox")) {
-    e.target.parentElement.classList.toggle("finished");
+    e.target.nextSibling.classList.toggle("finished");
   }
 };
 
