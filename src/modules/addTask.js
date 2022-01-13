@@ -1,20 +1,19 @@
-import Tasks from "./classTasks.js";
-import checkDuplicate from "./checkDup.js";
-import optionIconUrl from "../imgs/optionsIcon.svg";
-import trashIcon from "../imgs/trashIcon.svg";
-import getData from "./arrangeIndex.js";
+import Tasks from './classTasks.js';
+import checkDuplicate from './checkDup.js';
+import optionIconUrl from '../imgs/optionsIcon.svg';
+import trashIcon from '../imgs/trashIcon.svg';
+import getData from './arrangeIndex.js';
 
-const input = document.getElementById("task-input");
-const inputItem = document.getElementById("input-item");
+const input = document.getElementById('task-input');
 
 getData();
 
 let id;
 
 const addTask = (e) => {
-  if (e.key === "Enter") {
+  if (e.key === 'Enter') {
     // If empty value
-    if (input.value === "") return;
+    if (input.value === '') return;
 
     // Check duplication
     if (!checkDuplicate(input.value)) return;
@@ -37,11 +36,11 @@ const addTask = (e) => {
     </li>
     `;
 
-    const ul = document.getElementById("ul");
+    const ul = document.getElementById('ul');
     ul.innerHTML += htmlTask;
 
     // Clear inputs
-    input.value = "";
+    input.value = '';
     input.focus();
   }
 };
