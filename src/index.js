@@ -1,21 +1,11 @@
-import './style.css';
-import optionIconUrl from './imgs/optionsIcon.svg';
-import tasks from './modules/tasksList.js';
+import "./style.css";
 
-const inputItem = document.getElementById('input-item');
+import displayAllTasks from "./modules/displayAllTasks.js";
+import addTask from "./modules/addTask.js";
+// import Tasks from "./modules/classTasks.js";
 
-const tasksDisplay = () => {
-  tasks.reverse().forEach((task) => {
-    const html = `
-    <li class="task-${task.index}">
-      <div class="task">
-        <input type="checkbox" name="task"> ${task.description}
-      </div>
-      <img src="${optionIconUrl}" alt="option-icon" class="option-icon">
-    </li>
-    `;
-    inputItem.insertAdjacentHTML('afterend', html);
-  });
+document.addEventListener("keypress", addTask);
+
+window.onload = () => {
+  displayAllTasks();
 };
-
-tasksDisplay();

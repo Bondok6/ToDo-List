@@ -18,7 +18,7 @@ body {
 
 #todo-list {
   width: 60rem;
-  margin: 10rem auto;
+  margin: 5rem auto;
   list-style: none;
   background-color: #fff;
   box-shadow: 0.5rem 0.5rem 2rem #222;
@@ -60,4 +60,30 @@ body {
   margin-top: 1rem;
   padding: 1.5rem;
   background-color: gainsboro;
+}
+
+.status {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.error,
+.success {
+  width: fit-content;
+  padding: 1rem 2rem;
+  margin: 2rem auto 0;
+  font-size: 2.5rem;
+}
+
+.error {
+  color: #d8000c;
+  background-color: #ffd2d2;
+}
+
+.success {
+  color: #4f8a10;
+  background-color: #dff2bf;
 }

@@ -116,17 +116,37 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _imgs_optionsIcon_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./imgs/optionsIcon.svg */ \"./src/imgs/optionsIcon.svg\");\n/* harmony import */ var _modules_tasksList_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/tasksList.js */ \"./src/modules/tasksList.js\");\n\n\n\n\nconst inputItem = document.getElementById(\"input-item\");\n\nconst tasksDisplay = () => {\n  _modules_tasksList_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].reverse().forEach((task, ind) => {\n    const html = `\n    <li class=\"task-${task.index}\">\n      <div class=\"task\">\n        <input type=\"checkbox\" name=\"task\"> ${task.description}\n      </div>\n      <img src=\"${_imgs_optionsIcon_svg__WEBPACK_IMPORTED_MODULE_1__}\" alt=\"option-icon\" class=\"option-icon\">\n    </li>\n    `;\n    inputItem.insertAdjacentHTML(\"afterend\", html);\n  });\n};\n\ntasksDisplay();\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_classTasks_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/classTasks.js */ \"./src/modules/classTasks.js\");\n/* harmony import */ var _modules_addTask_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/addTask.js */ \"./src/modules/addTask.js\");\n\r\n\r\n\r\n\r\n\r\n// Display Data: when reload the page\r\nwindow.onload = () => {\r\n  // Tasks.displayTask();\r\n  (0,_modules_addTask_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n};\r\n\r\n// const tasksDisplay = () => {\r\n//   tasks.reverse().forEach((task) => {\r\n//     const html = `\r\n//     <li class=\"task-${task.index}\">\r\n//       <div class=\"task\">\r\n//         <input type=\"checkbox\" name=\"task\"> ${task.description}\r\n//       </div>\r\n//       <img src=\"${optionIconUrl}\" alt=\"option-icon\" class=\"option-icon\">\r\n//     </li>\r\n//     `;\r\n//     inputItem.insertAdjacentHTML(\"afterend\", html);\r\n//   });\r\n// };\r\n\r\n// tasksDisplay();\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
-/***/ "./src/modules/tasksList.js":
-/*!**********************************!*\
-  !*** ./src/modules/tasksList.js ***!
-  \**********************************/
+/***/ "./src/modules/addTask.js":
+/*!********************************!*\
+  !*** ./src/modules/addTask.js ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst tasks = [\r\n  {\r\n    description: \"Study JavaScript\",\r\n    completed: false,\r\n    index: 1,\r\n  },\r\n  {\r\n    description: \"Study Arabic\",\r\n    completed: false,\r\n    index: 2,\r\n  },\r\n  {\r\n    description: \"Study English\",\r\n    completed: false,\r\n    index: 3,\r\n  },\r\n  {\r\n    description: \"Study Math\",\r\n    completed: false,\r\n    index: 4,\r\n  },\r\n];\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (tasks);\r\n\n\n//# sourceURL=webpack:///./src/modules/tasksList.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _classTasks_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classTasks.js */ \"./src/modules/classTasks.js\");\n/* harmony import */ var _checkDup_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./checkDup.js */ \"./src/modules/checkDup.js\");\n\r\n\r\n\r\nconst input = document.getElementById(\"task-input\");\r\n\r\nconst addTask = () => {\r\n  document.addEventListener(\"keypress\", (e) => {\r\n    if (e.key === \"Enter\") {\r\n      // If empty value\r\n      console.log(input.value);\r\n      if (input.value === \"\") return;\r\n\r\n      // Check duplication\r\n      if (!(0,_checkDup_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(input.value)) return;\r\n\r\n      // If new task\r\n      const newTask = new _classTasks_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](input.value, 1);\r\n      console.log(newTask);\r\n      newTask.add();\r\n\r\n      // Clear inputs\r\n      input.value = \"\";\r\n      input.focus();\r\n    }\r\n  });\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addTask);\r\n\n\n//# sourceURL=webpack:///./src/modules/addTask.js?");
+
+/***/ }),
+
+/***/ "./src/modules/checkDup.js":
+/*!*********************************!*\
+  !*** ./src/modules/checkDup.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _classTasks_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classTasks.js */ \"./src/modules/classTasks.js\");\n\r\n\r\n// check Duplication\r\nconst checkDuplicate = (desc) => {\r\n  const b = _classTasks_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].tasks.filter((task) => desc === task.description);\r\n  if (!b.length) return true;\r\n  return false;\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (checkDuplicate);\r\n\n\n//# sourceURL=webpack:///./src/modules/checkDup.js?");
+
+/***/ }),
+
+/***/ "./src/modules/classTasks.js":
+/*!***********************************!*\
+  !*** ./src/modules/classTasks.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _imgs_optionsIcon_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../imgs/optionsIcon.svg */ \"./src/imgs/optionsIcon.svg\");\n\r\n\r\nclass Tasks {\r\n  static tasks = [];\r\n\r\n  constructor(description, id, completed) {\r\n    this.description = description;\r\n    this.id = id;\r\n    this.completed = false;\r\n  }\r\n\r\n  static storage(tasks) {\r\n    localStorage.setItem(\"tasks\", JSON.stringify(tasks));\r\n  }\r\n\r\n  add() {\r\n    Tasks.tasks.push(this);\r\n    Tasks.storage(Tasks.tasks);\r\n    Tasks.displayTask();\r\n  }\r\n\r\n  // Display tasks\r\n  static displayTask() {\r\n    // if (JSON.parse(localStorage.getItem(\"tasks\"))) {\r\n    //   Tasks.tasks = JSON.parse(localStorage.getItem(\"tasks\"));\r\n    // }\r\n\r\n    let itemHtml = \"\";\r\n    Tasks.tasks.forEach((task) => {\r\n      console.log(task);\r\n      itemHtml += `\r\n      <li class=\"task-${task.id}\">\r\n        <div class=\"task\">\r\n          <input type=\"checkbox\" name=\"task\"> ${task.description}\r\n        </div>\r\n        <img src=\"${_imgs_optionsIcon_svg__WEBPACK_IMPORTED_MODULE_0__}\" alt=\"option-icon\" class=\"option-icon\">\r\n      </li>\r\n      `;\r\n    });\r\n    const inputItem = document.getElementById(\"input-item\");\r\n    inputItem.insertAdjacentHTML(\"afterend\", itemHtml);\r\n  }\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Tasks);\r\n\n\n//# sourceURL=webpack:///./src/modules/classTasks.js?");
 
 /***/ }),
 
