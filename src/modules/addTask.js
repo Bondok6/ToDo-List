@@ -1,19 +1,20 @@
-import Tasks from './classTasks.js';
-import checkDuplicate from './checkDup.js';
-import optionIconUrl from '../imgs/optionsIcon.svg';
-import trashIcon from '../imgs/trashIcon.svg';
-import getData from './arrangeIndex.js';
+import Tasks from "./classTasks.js";
+import checkDuplicate from "./helper/checkDup.js";
+import optionIconUrl from "../imgs/optionsIcon.svg";
+import trashIcon from "../imgs/trashIcon.svg";
+import getData from "./helper/arrangeIndex.js";
+import statusTask from "./statusTask.js";
 
-const input = document.getElementById('task-input');
+const input = document.getElementById("task-input");
 
 getData();
 
 let id;
 
 const addTask = (e) => {
-  if (e.key === 'Enter') {
+  if (e.key === "Enter") {
     // If empty value
-    if (input.value === '') return;
+    if (input.value === "") return;
 
     // Check duplication
     if (!checkDuplicate(input.value)) return;
@@ -36,11 +37,21 @@ const addTask = (e) => {
     </li>
     `;
 
-    const ul = document.getElementById('ul');
+    const ul = document.getElementById("ul");
     ul.innerHTML += htmlTask;
+    statusTask();
+
+    Tasks.tasks.forEach((task) => {
+      if (task.completed) {
+        document
+          .querySelectorAll(".task-desc")
+          [task.index - 1].classList.add("finished");
+        document.querySelectorAll(".checkbox")[task.index - 1].checked = true;
+      }
+    });
 
     // Clear inputs
-    input.value = '';
+    input.value = "";
     input.focus();
   }
 };

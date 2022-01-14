@@ -1,12 +1,12 @@
-import optionIconUrl from '../imgs/optionsIcon.svg';
-import trashIcon from '../imgs/trashIcon.svg';
-import Tasks from './classTasks.js';
-import getData from './arrangeIndex.js';
+import optionIconUrl from "../imgs/optionsIcon.svg";
+import trashIcon from "../imgs/trashIcon.svg";
+import Tasks from "./classTasks.js";
+import getData from "./helper/arrangeIndex.js";
 
 const render = () => {
   getData();
 
-  let htmlTask = '';
+  let htmlTask = "";
   Tasks.tasks.forEach((task) => {
     htmlTask += `
     <li class="${task.index}">
@@ -20,8 +20,18 @@ const render = () => {
     </li>
     `;
   });
-  const ul = document.getElementById('ul');
+
+  const ul = document.getElementById("ul");
   ul.innerHTML = htmlTask;
+
+  Tasks.tasks.forEach((task) => {
+    if (task.completed) {
+      document
+        .querySelectorAll(".task-desc")
+        [task.index - 1].classList.add("finished");
+      document.querySelectorAll(".checkbox")[task.index - 1].checked = true;
+    }
+  });
 };
 
 export default render;
