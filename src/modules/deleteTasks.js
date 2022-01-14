@@ -1,8 +1,8 @@
-import Tasks from "./classTasks";
-import render from "./render";
+import Tasks from './classTasks.js';
+import render from './render.js';
 
 const deletTasks = () => {
-  document.querySelectorAll(".finished").forEach((item) => {
+  document.querySelectorAll('.finished').forEach((item) => {
     item.parentNode.parentNode.remove();
   });
 
@@ -10,7 +10,7 @@ const deletTasks = () => {
   Tasks.arrange();
   Tasks.storage(Tasks.tasks);
   render();
-  location.reload();
+  window.location.reload();
 };
 
 export default deletTasks;
