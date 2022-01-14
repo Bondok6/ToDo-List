@@ -1,4 +1,4 @@
-import Tasks from './classTasks.js';
+import Tasks from '../classTasks.js';
 
 const getData = () => {
   if (JSON.parse(localStorage.getItem('tasks'))) {

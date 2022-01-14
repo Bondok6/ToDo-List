@@ -3,9 +3,9 @@ import render from './render.js';
 
 const options = (e) => {
   // Delete Task
-  const targetId = +e.target.parentNode.parentNode.className;
+  const target = e.target.parentNode.parentNode;
+  const targetId = +target.className;
   if (e.target.classList.contains('delete-icon')) {
-    const target = e.target.parentNode.parentNode;
     Tasks.tasks = Tasks.tasks.filter((task) => task.index !== targetId);
     Tasks.arrange();
     Tasks.storage(Tasks.tasks);
@@ -36,11 +36,6 @@ const options = (e) => {
       optionIcon.classList.remove('hidden');
       span.classList.add('hidden');
     });
-  }
-
-  // completed Task
-  if (e.target.classList.contains('checkbox')) {
-    e.target.nextSibling.classList.toggle('finished');
   }
 };
 

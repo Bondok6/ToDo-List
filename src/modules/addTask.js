@@ -1,8 +1,9 @@
 import Tasks from './classTasks.js';
-import checkDuplicate from './checkDup.js';
+import checkDuplicate from './helper/checkDup.js';
 import optionIconUrl from '../imgs/optionsIcon.svg';
 import trashIcon from '../imgs/trashIcon.svg';
-import getData from './arrangeIndex.js';
+import getData from './helper/arrangeIndex.js';
+import statusTask from './statusTask.js';
 
 const input = document.getElementById('task-input');
 
@@ -38,6 +39,15 @@ const addTask = (e) => {
 
     const ul = document.getElementById('ul');
     ul.innerHTML += htmlTask;
+    statusTask();
+
+    // prettier-ignore
+    Tasks.tasks.forEach((task) => {
+      if (task.completed) {
+        document.querySelectorAll('.task-desc')[task.index - 1].classList.add('finished');
+        document.querySelectorAll('.checkbox')[task.index - 1].checked = true;
+      }
+    });
 
     // Clear inputs
     input.value = '';

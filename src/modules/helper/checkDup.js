@@ -1,4 +1,4 @@
-import Tasks from './classTasks.js';
+import Tasks from '../classTasks.js';
 
 // check Duplication
 const checkDuplicate = (desc) => {

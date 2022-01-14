@@ -4,6 +4,10 @@
 
 > ### In this project, I built a simple To-Do App for managing the daily tasks and to keep track on tasks during the day.
 
+
+https://user-images.githubusercontent.com/45231276/149444798-1499d9c0-4ce7-42b1-bfe3-4f73752752aa.mp4
+
+
 ## Built With
 
 - HTML - HTML5
