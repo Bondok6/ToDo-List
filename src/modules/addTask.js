@@ -41,14 +41,6 @@ const addTask = (e) => {
     ul.innerHTML += htmlTask;
     statusTask();
 
-    // prettier-ignore
-    Tasks.tasks.forEach((task) => {
-      if (task.completed) {
-        document.querySelectorAll('.task-desc')[task.index - 1].classList.add('finished');
-        document.querySelectorAll('.checkbox')[task.index - 1].checked = true;
-      }
-    });
-
     // Clear inputs
     input.value = '';
     input.focus();

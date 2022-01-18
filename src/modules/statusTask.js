@@ -11,6 +11,14 @@ const statusTask = () => {
       Tasks.storage(Tasks.tasks);
     });
   });
+
+  // prettier-ignore
+  Tasks.tasks.forEach((task) => {
+    if (task.completed) {
+      document.querySelectorAll('.task-desc')[task.index - 1].classList.add('finished');
+      document.querySelectorAll('.checkbox')[task.index - 1].checked = true;
+    }
+  });
 };
 
 export default statusTask;
