@@ -20,7 +20,7 @@ https://user-images.githubusercontent.com/45231276/149444798-1499d9c0-4ce7-42b1-
 
 ## Live Demo
 
-[ToDo-list link](https://bondok6.github.io/ToDo-List/dist/)
+[ToDo-list link](https://bondok6.github.io/ToDo-List/)
 
 ## Getting Started
 
