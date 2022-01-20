@@ -8,7 +8,7 @@ class Tasks {
   }
 
   static storage(tasks) {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    localStorage.setItem("tasks", JSON.stringify(tasks));
   }
 
   static arrange() {
