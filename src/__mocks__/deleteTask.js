@@ -1,4 +1,4 @@
-import Tasks from "./../modules/classTasks";
+import Tasks from '../modules/classTasks';
 
 const deleteTask = (input) => {
   if (Tasks.tasks.length === 0) return false;
