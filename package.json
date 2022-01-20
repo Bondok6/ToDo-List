@@ -3,11 +3,11 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
     "build": "webpack",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Bondok6/ToDo-list#readme",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.8",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.5.1",
     "eslint": "^7.32.0",
@@ -31,6 +32,7 @@
     "hint": "^6.1.9",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.4.7",
     "style-loader": "^3.3.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
