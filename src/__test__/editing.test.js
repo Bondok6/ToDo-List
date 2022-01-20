@@ -1,16 +1,17 @@
-import addTask from '../__mocks__/addTask.js';
-import Tasks from '../modules/classTasks.js';
-import editTask from '../__mocks__/editingTask.js';
+import addTask from "../__mocks__/addTask.js";
+import Tasks from "../modules/classTasks.js";
+import editTask from "../__mocks__/editingTask.js";
 
-describe('Edit task in the list', () => {
-  test('', () => {
-    const input = 'Task 11';
-    const index = Tasks.tasks.length - 1;
-    addTask(input);
-    const newInput = 'New task description';
-    editTask(newInput, index);
-    Tasks.storage(Tasks.tasks);
+describe("Edit task in the list", () => {
+  test("Edit task", () => {
+    const oldInput = "Task 11";
+    addTask(oldInput);
 
-    expect(Tasks.task[index].description).toThrow(newInput);
+    const newInput = "New task description";
+
+    const list = editTask(oldInput, newInput);
+
+    expect(list).toHaveLength(1);
+    expect(list[0].description).toBe(newInput);
   });
 });
