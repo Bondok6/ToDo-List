@@ -1,19 +1,24 @@
-import { statusTask, changeStatus } from "../__mocks__/statusTask.js";
-import addTask from "../__mocks__/addTask.js";
+import { statusTask, changeStatus } from '../__mocks__/statusTask.js';
+import addTask from '../__mocks__/addTask.js';
 
-test("should first", () => {
-  const input = "Task 20";
+describe('Updating an item\'s \'completed\' status', () => {
+  test('should first', () => {
+    const input = 'Task 20';
 
-  addTask(input);
+    addTask(input);
 
-  expect(statusTask(input)).toBe(false);
-  expect(statusTask(input)).toBeFalsy();
-});
+    const result = statusTask(input); // status is false by default
 
-test("", () => {
-  const input = "Task 20";
-  addTask(input); // status is false by default
+    expect(result).toBeFalsy();
+  });
 
-  const result = changeStatus(input); // change the status to true
-  expect(result).toBe(true);
+  test('Checking the status updated', () => {
+    const input = 'Task 20';
+
+    addTask(input); // status is false by default
+
+    const result = changeStatus(input); // change the status to true
+
+    expect(result).toBeTruthy();
+  });
 });
