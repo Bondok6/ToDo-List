@@ -1,4 +1,4 @@
-import Tasks from '../modules/classTasks';
+import Tasks from '../modules/classTasks.js';
 
 const addTask = (input) => {
   // check If the value not empty

@@ -1,5 +1,5 @@
 import addTask from '../__mocks__/addTask.js';
-import Tasks from '../modules/classTasks';
+import Tasks from '../modules/classTasks.js';
 
 describe('Add task in the list', () => {
   test('Test if the task is added correctly', () => {

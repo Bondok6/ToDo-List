@@ -1,6 +1,6 @@
 import addTask from '../__mocks__/addTask.js';
-import Tasks from '../modules/classTasks';
-import deleteTask from '../__mocks__/deleteTask';
+import Tasks from '../modules/classTasks.js';
+import deleteTask from '../__mocks__/deleteTask.js';
 
 describe('Remove task in the list', () => {
   test('Remove the target task', () => {
