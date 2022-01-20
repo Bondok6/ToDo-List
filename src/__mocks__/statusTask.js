@@ -1,4 +1,4 @@
-import Tasks from "../modules/classTasks.js";
+import Tasks from '../modules/classTasks.js';
 
 const statusTask = (input) => {
   let status;
