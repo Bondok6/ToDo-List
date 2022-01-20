@@ -1,4 +1,4 @@
-import Tasks from "./../modules/classTasks";
+import Tasks from '../modules/classTasks.js';
 
 const deleteAll = () => {
   const List = Tasks.tasks.filter((task) => !task.completed);
