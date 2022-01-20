@@ -1,12 +1,15 @@
-import Tasks from "../modules/classTasks.js";
+import Tasks from '../modules/classTasks.js';
 
 const editTask = (oldInput, newInput) => {
   // Edit Task
+  if (oldInput === '') return false;
+
   Tasks.tasks.forEach((task) => {
     if (task.description === oldInput) {
       task.description = newInput;
     }
   });
+
   return Tasks.tasks;
 };
 
