@@ -3,10 +3,6 @@
   "description": "",
   "private": true,
   "scripts": {
-<<<<<<< HEAD
-    "test": "jest",
-=======
->>>>>>> 5e2794df85e42448db913d35aea9189350a30b91
     "watch": "webpack --watch",
     "start": "webpack serve --open",
     "build": "webpack",

@@ -12,3 +12,5 @@ statusTask();
 document.addEventListener('keypress', addTask);
 document.addEventListener('click', options);
 document.querySelector('#clear-btn').addEventListener('click', deleteTasks);
+// prettier-ignore
+document.querySelector('.rotate-icon').addEventListener('click', () => window.location.reload());
