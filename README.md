@@ -28,6 +28,8 @@ To get a local copy up and running follow these simple example steps.
 
 `git clone git@github.com:Bondok6/ToDo-list.git`
 
+Then `cd Todo-list`
+
 Then `npm install` to install packages
 
 Finally `npm start`
